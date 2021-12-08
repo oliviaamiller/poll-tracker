@@ -13,66 +13,73 @@
 </head>
 
 <body>  
-    <div>
-        <form id="poll-form"> 
-            <label>
-                question
-                <input name="question"/>
-            </label>
-            <label>
-                option A
-                <input name="option-a"/>
-            </label>   
-            <label>
-                option B
-                <input name="option-b"/>
-                <button>submit</button>
-            </label>
-        </form>
-    </div>
-    <span>
-        <div>
-            <h3 id="question">question</h3>
-        </div>
-        <div class="buttons">
-            <div class="top-buttons">
-                <div class="left-buttons">
-                    <h3 id="option-a">option A</h3>
-                    <button id="a-add-button">
-                        add
-                    </button>
-                    <button id="a-undo-button">
-                        undo
-                    </button>
+    <main>
+        <span class="container">
+            <div class="left">
+                <h2>current poll</h2>
+                <div>
+                    <h3 id="question">question</h3>
                 </div>
-                <div class="right-buttons">
-                    <h3 id="option-b">option B</h3>
-                    <button id="b-add-button">
-                        add
-                    </button> 
-                    <button id="b-undo-button">
-                        undo
-                    </button>    
+                <div id="current-poll">
                 </div>
-
+    
+                <div class="form">
+                    <form id="poll-form"> 
+                        <label>
+                            question
+                            <input name="question"/>
+                        </label>
+                        <label>
+                            option A
+                            <input name="option-a"/>
+                        </label>   
+                        <label>
+                            option B
+                            <input name="option-b"/>
+                            <button>submit</button>
+                        </label>
+                    </form>
+                </div>
+                
+                <div class="buttons">
+                    <div class="top-buttons">
+                         <div class="left-buttons">
+                            <h3 id="option-a">option A</h3>
+                             <button id="a-add-button">
+                                add
+                             </button>
+                             <button id="a-undo-button">
+                              undo
+                             </button>
+                        </div>
+                        <div class="right-buttons">
+                            <h3 id="option-b">option B</h3>
+                            <button id="b-add-button">
+                                add
+                            </button> 
+                                <button id="b-undo-button">
+                                undo
+                            </button>    
+                        </div>
+            
+                    </div>
+                    <div>
+                        <button id="close-button">
+                            close poll
+                        </button>    
+                    </div>
+                </div>
             </div>
-            <div>
-                <button id="close-button">
-                    close poll
-                </button>    
+            <div class="right">
+                <div>
+                    <h2>closed polls</h2>
+                </div>
+                <div id="closed-polls">
+                </div>
             </div>
-        </div>
-    </span>
+        </span>
+    </main>
 
-    <span>
-        <div id="current-poll">
-      
-        </div>
-    </span>
-    <span>
-        <div id="closed-polls">
-        </div>
-    </span>
     <script type="module" src="./app.js"></script>
 </body>
 

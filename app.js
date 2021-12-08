@@ -114,8 +114,6 @@ function displayCurrentPoll() {
 
     const newPoll = renderPoll(poll);
 
-    console.log(newPoll);
-
     currentPollEl.append(newPoll);
 }
 

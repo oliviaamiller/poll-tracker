@@ -2,10 +2,7 @@ export function renderPoll(poll) {
     const pollDiv = document.createElement('div');
     const optionA = renderOption(poll.optionA, poll.aVotes);
     const optionB = renderOption(poll.optionB, poll.bVotes);
-        
-    console.log(poll);
-
-
+    
     pollDiv.append(optionA, optionB);
 
     pollDiv.classList.add('poll');
@@ -22,6 +19,7 @@ export function renderOption(option, vote) {
 
     optionP.textContent = option;
     voteP.textContent = vote;
+
 
     optionDiv.append(optionP, voteP);
 
