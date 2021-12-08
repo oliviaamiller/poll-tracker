@@ -124,6 +124,7 @@ function displayAllPolls() {
     // loop through the past polls in the state
     for (let closedPoll of closedPollsArray) {
         const container = renderPoll(closedPoll);
+        container.classList.add('old-polls');
 
         closedPollsEl.append(container);
     }

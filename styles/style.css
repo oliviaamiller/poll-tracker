@@ -19,8 +19,34 @@
 
 .left h2 {
     color: blue;
+    text-transform: uppercase;
+    font-family: sans-serif;
 }
 
 .right h2 {
     color: red;
+    text-transform: uppercase;
+    font-family: sans-serif;
+}
+
+button {
+    color: blue;
+    background-color: white;
+    border: blue 1px solid;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.poll {
+    color: turquoise;
+    border: 1px turquoise solid;
+    padding: 5px;
+    margin: 10px;
+}
+
+.old-polls {
+    color: pink;
+    border: 1px pink solid;
+    padding: 5px;
+    margin: 10px;
 }
