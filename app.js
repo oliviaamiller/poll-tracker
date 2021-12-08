@@ -22,3 +22,19 @@ let bVotes = 0;
   // get user input
   // use user input to update state 
   // update DOM to reflect the new state
+
+aAddButtonEl.addEventListener('click', () => {
+    aVotes++;
+});
+
+bAddButtonEl.addEventListener('click', () => {
+    bVotes++;
+});
+
+aUndoButtonEl.addEventListener('click', () => {
+    aVotes--;
+});
+
+bUndoButtonEl.addEventListener('click', () => {
+    bVotes--;
+});
