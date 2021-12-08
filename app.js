@@ -19,7 +19,7 @@ const bLabelEl = document.querySelector('#option-b');
 
 const form = document.querySelector('form');
 
-const pastPollsArray = [];
+const closedPollsArray = [];
 
 
 // let state
@@ -79,21 +79,22 @@ pollFormEl.addEventListener('submit', (e) => {
 
 closeButtonEl.addEventListener('click', () => {
   // add the current poll to an array of polls in state
-    const poll = {
-        question: question,
-        optionA: optionA,
-        optionB: optionB
-    };
+    const poll = makePoll();
 
-    pastPollsArray.push(poll);
+
+    closedPollsArray.push(poll);
 
   // display in DOM
+    displayAllPolls();
 
   // reset the initial state to start with a new form
     question = '';
     optionA = '';
     optionB = '';
+    aVotes = 0;
+    bVotes = 0;
 
+    displayCurrentPoll();
 });
 
 function displayCurrentPoll() {
@@ -109,13 +110,35 @@ function displayCurrentPoll() {
 
     // call the renderPoll function to create a poll element
 
-    const poll = {
-        question: question,
-        optionA: optionA,
-        optionB: optionB
-    };
+    const poll = makePoll();
 
     const newPoll = renderPoll(poll);
 
+    console.log(newPoll);
+
     currentPollEl.append(newPoll);
 }
+
+function displayAllPolls() {
+    // clear out the closed polls list in the DOM
+    closedPollsEl.textContent = '';
+
+    // loop through the past polls in the state
+    for (let closedPoll of closedPollsArray) {
+        const container = renderPoll(closedPoll);
+
+        closedPollsEl.append(container);
+    }
+}
+
+function makePoll() {
+    return {
+        question: question, 
+        optionA: optionA,
+        optionB: optionB, 
+        aVotes: aVotes,
+        bVotes: bVotes
+    };
+}
+
+
