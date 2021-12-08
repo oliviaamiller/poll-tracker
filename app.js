@@ -10,10 +10,13 @@ const bUndoButtonEl = document.querySelector('#b-undo-button');
 const currentContainerEl = document.querySelector('#current-container');
 const closedContainerEl = document.querySelector('#closed-container');
 
-console.log(pollFormEl, submitButtonEl, closeButtonEl, aAddButtonEl, bAddButtonEl, aUndoButtonEl, bUndoButtonEl, currentContainerEl, closedContainerEl);
-
 
 // let state
+let question = '';
+let optionA = '';
+let optionB = '';
+let aVotes = 0;
+let bVotes = 0;
 
 // set event listeners 
   // get user input
