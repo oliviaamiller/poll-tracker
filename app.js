@@ -1,13 +1,21 @@
 // import functions and grab DOM elements
+import { renderPoll } from './render-poll.js';
+  
 
 const pollFormEl = document.querySelector('#poll-form');
+
 const closeButtonEl = document.querySelector('#close-button');
 const aAddButtonEl = document.querySelector('#a-add-button');
 const bAddButtonEl = document.querySelector('#b-add-button');
 const aUndoButtonEl = document.querySelector('#a-undo-button');
 const bUndoButtonEl = document.querySelector('#b-undo-button');
-const currentContainerEl = document.querySelector('#current-container');
-const closedContainerEl = document.querySelector('#closed-container');
+
+const currentPollEl = document.querySelector('#current-poll');
+const closedPollsEl = document.querySelector('#closed-polls');
+
+const questionLabelEl = document.querySelector('#question');
+const aLabelEl = document.querySelector('#option-a');
+const bLabelEl = document.querySelector('#option-b');
 
 const form = document.querySelector('form');
 
@@ -28,18 +36,26 @@ let bVotes = 0;
 
 aAddButtonEl.addEventListener('click', () => {
     aVotes++;
+
+    displayCurrentPoll();
 });
 
 bAddButtonEl.addEventListener('click', () => {
     bVotes++;
+
+    displayCurrentPoll();
 });
 
 aUndoButtonEl.addEventListener('click', () => {
     aVotes--;
+
+    displayCurrentPoll();
 });
 
 bUndoButtonEl.addEventListener('click', () => {
     bVotes--;
+
+    displayCurrentPoll();
 });
 
 pollFormEl.addEventListener('submit', (e) => {
@@ -58,7 +74,7 @@ pollFormEl.addEventListener('submit', (e) => {
     pollFormEl.reset();
 
   // reflect poll changes in the DOM 
-
+    displayCurrentPoll();
 });
 
 closeButtonEl.addEventListener('click', () => {
@@ -79,3 +95,27 @@ closeButtonEl.addEventListener('click', () => {
     optionB = '';
 
 });
+
+function displayCurrentPoll() {
+    // clear out the current game div
+    currentPollEl.textContent = '';
+
+    // change the label to show the question
+    questionLabelEl.textContent = question;
+
+    //change the labels to show option A and option B
+    aLabelEl.textContent = optionA;
+    bLabelEl.textContent = optionB;
+
+    // call the renderPoll function to create a poll element
+
+    const poll = {
+        question: question,
+        optionA: optionA,
+        optionB: optionB
+    };
+
+    const newPoll = renderPoll(poll);
+
+    currentPollEl.append(newPoll);
+}
