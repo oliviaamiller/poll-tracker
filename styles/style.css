@@ -15,6 +15,7 @@
     border: blue 1px solid;
     margin: 10px;
     padding: 20px;
+    color: blue;
 }
 
 .left h2 {
@@ -38,8 +39,8 @@ button {
 }
 
 .poll {
-    color: turquoise;
-    border: 1px turquoise solid;
+    color: skyblue;
+    border: 1px skyblue solid;
     padding: 5px;
     margin: 10px;
 }
@@ -49,4 +50,19 @@ button {
     border: 1px pink solid;
     padding: 5px;
     margin: 10px;
+}
+
+.form {
+    color: blue;
+
+}
+
+.form input {
+    border: blue 1px solid;
+
+}
+
+.question {
+    text-transform: uppercase;
+    font-family: sans-serif;
 }

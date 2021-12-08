@@ -13,7 +13,6 @@ const bUndoButtonEl = document.querySelector('#b-undo-button');
 const currentPollEl = document.querySelector('#current-poll');
 const closedPollsEl = document.querySelector('#closed-polls');
 
-const questionLabelEl = document.querySelector('#question');
 const aLabelEl = document.querySelector('#option-a');
 const bLabelEl = document.querySelector('#option-b');
 
@@ -91,8 +90,8 @@ closeButtonEl.addEventListener('click', () => {
     question = '';
     optionA = '';
     optionB = '';
-    aVotes = 0;
-    bVotes = 0;
+    aVotes = '';
+    bVotes = '';
 
     displayCurrentPoll();
 });
@@ -100,9 +99,6 @@ closeButtonEl.addEventListener('click', () => {
 function displayCurrentPoll() {
     // clear out the current game div
     currentPollEl.textContent = '';
-
-    // change the label to show the question
-    questionLabelEl.textContent = question;
 
     //change the labels to show option A and option B
     aLabelEl.textContent = optionA;

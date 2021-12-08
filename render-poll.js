@@ -1,9 +1,13 @@
 export function renderPoll(poll) {
     const pollDiv = document.createElement('div');
+    const questionP = document.createElement('p');
     const optionA = renderOption(poll.optionA, poll.aVotes);
     const optionB = renderOption(poll.optionB, poll.bVotes);
+
+    questionP.textContent = poll.question;
+    questionP.classList.add('question');
     
-    pollDiv.append(optionA, optionB);
+    pollDiv.append(questionP, optionA, optionB);
 
     pollDiv.classList.add('poll');
 
