@@ -11,6 +11,8 @@ const closedContainerEl = document.querySelector('#closed-container');
 
 const form = document.querySelector('form');
 
+const pastPollsArray = [];
+
 
 // let state
 let question = '';
@@ -54,5 +56,26 @@ pollFormEl.addEventListener('submit', (e) => {
 
   // reset the form 
     pollFormEl.reset();
+
+  // reflect poll changes in the DOM 
+
+});
+
+closeButtonEl.addEventListener('click', () => {
+  // add the current poll to an array of polls in state
+    const poll = {
+        question: question,
+        optionA: optionA,
+        optionB: optionB
+    };
+
+    pastPollsArray.push(poll);
+
+  // display in DOM
+
+  // reset the initial state to start with a new form
+    question = '';
+    optionA = '';
+    optionB = '';
 
 });
