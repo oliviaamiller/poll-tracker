@@ -9,6 +9,8 @@
     border: red 1px solid;
     margin: 10px;
     padding: 20px;
+    width: 50%;
+    height: auto;
 }
 
 .left {
@@ -28,6 +30,9 @@
     color: red;
     text-transform: uppercase;
     font-family: sans-serif;
+    display: flex;
+    flex-direction: row;
+    justify-items: flex-start;
 }
 
 button {
@@ -50,6 +55,9 @@ button {
     border: 1px pink solid;
     padding: 5px;
     margin: 10px;
+    width: 25%;
+    height: auto;
+  
 }
 
 .form {
@@ -65,4 +73,12 @@ button {
 .question {
     text-transform: uppercase;
     font-family: sans-serif;
+}
+
+#close-button {
+    margin-top: 5px;
+}
+
+.submit-button {
+    margin-top: 5px;
 }
